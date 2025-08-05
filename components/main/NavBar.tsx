@@ -12,25 +12,31 @@ const Navbar = () => {
       <div className="flex items-center justify-between h-full max-w-[1200px] mx-auto w-full px-4 sm:px-6 md:px-3">
 
         {/* LEFT: WhatsApp Icon */}
-        <div className="flex-shrink-0">
-          <a
-            href="https://wa.me/923004765333"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center"
-          >
-            <FaWhatsapp className="text-purple-500 text-[20px]" />
-            <span className="font-bold ml-2 hidden sm:block text-gray-300 text-sm sm:text-base">
-              +92-3004765333
-            </span>
-          </a>
-        </div>
+       <div className="flex-shrink-0">
+  <a
+    href="https://wa.me/923004765333"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center group"
+  >
+    <FaWhatsapp className="text-purple-500 text-[20px]" />
+    <span className="text-[15px]  ml-2 hidden sm:block text-gray-300  group-hover:text-purple-500 transition-colors duration-300">
+      +92-3004765333
+    </span>
+  </a>
+</div>
 
         {/* CENTER: Navigation Links */}
-        <div className="hidden md:flex gap-10 border border-[#7042f861] bg-[#0300145e] px-6 py-3 rounded-full text-gray-200 text-sm">
-          <a href="#about-me" className="cursor-pointer">About me</a>
-          <a href="#skills" className="cursor-pointer">Skills</a>
-          <a href="#projects" className="cursor-pointer">Projects</a>
+        <div className="hidden md:flex gap-30 border border-[#7042f861] bg-[#0300145e] px-6 py-3 rounded-full text-gray-200 text-sm mr-11">
+          <a href="#about-me" className="cursor-pointer hover:text-purple-400 transition-colors duration-300">
+            About me
+          </a>
+          <a href="#skills" className="cursor-pointer hover:text-purple-400 transition-colors duration-300">
+            Skills
+          </a>
+          <a href="#projects" className="cursor-pointer hover:text-purple-400 transition-colors duration-300">
+            Projects
+          </a>
         </div>
 
         {/* RIGHT: Social Icons + Hamburger */}
@@ -44,7 +50,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.name}
-                className="hover:opacity-80 transition-opacity duration-300"
+                className="hover:opacity-80 hover:scale-110 transition duration-300"
               >
                 <Image
                   src={social.src}
@@ -72,13 +78,25 @@ const Navbar = () => {
       {/* Mobile Dropdown */}
       {isMobileMenuOpen && (
         <div className="md:hidden flex flex-col items-start bg-[#030014] text-white px-4 py-3 rounded-md shadow-md mt-1 space-y-2">
-          <a href="#about-me" className="w-full border-b border-gray-600 py-2" onClick={() => setIsMobileMenuOpen(false)}>
+          <a
+            href="#about-me"
+            className="w-full border-b border-gray-600 py-2 hover:text-purple-400 transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             About me
           </a>
-          <a href="#skills" className="w-full border-b border-gray-600 py-2" onClick={() => setIsMobileMenuOpen(false)}>
+          <a
+            href="#skills"
+            className="w-full border-b border-gray-600 py-2 hover:text-purple-400 transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Skills
           </a>
-          <a href="#projects" className="w-full py-2" onClick={() => setIsMobileMenuOpen(false)}>
+          <a
+            href="#projects"
+            className="w-full py-2 hover:text-purple-400 transition-colors duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          >
             Projects
           </a>
 
@@ -91,6 +109,7 @@ const Navbar = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 title={social.name}
+                className="hover:opacity-80 hover:scale-110 transition duration-300"
               >
                 <Image
                   src={social.src}

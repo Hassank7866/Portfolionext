@@ -11,22 +11,23 @@ interface Props {
 
 const ProjectCard = ({ src, title, description, link }: Props) => {
   const content = (
-    <div className="relative overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] hover:scale-105 transition-transform cursor-pointer z-50">
-      <Image
-        src={src}
-        alt={title}
-        width={1000}
-        height={1000}
-        className="w-full object-contain"
-      />
-      <div className="relative p-4">
-        <a href={link}>
-             <h1 className="text-2xl font-semibold text-white">{title}</h1>
-        </a>
-       
-        <p className="mt-2 text-gray-300">{description}</p>
+    <div className="px-8">
+       <div className="w-[300px] h-[400px] flex flex-col justify-between bg-[#0D0B1F] overflow-hidden rounded-lg shadow-lg border border-[#2A0E61] hover:scale-105 transition-transform cursor-pointer z-50 ">
+      <div className="h-[200px] w-full relative">
+        <Image
+          src={src}
+          alt={title}
+          fill
+          className="object-cover"
+        />
+      </div>
+      <div className="p-4 flex flex-col justify-between flex-grow">
+        <h1 className="text-2xl font-semibold text-white">{title}</h1>
+        <p className="mt-2 text-gray-300 text-sm">{description}</p>
       </div>
     </div>
+    </div>
+   
   );
 
   return link ? (
